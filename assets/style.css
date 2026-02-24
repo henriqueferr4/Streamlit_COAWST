@@ -1,0 +1,57 @@
+/* Títulos */
+.titulo {
+    text-align: center;
+    font-size: 2.4rem;
+    font-weight: 600;
+}
+
+/* Subtítulos */
+.subtitulo {
+    text-align: left;
+    color: #ffffff;
+    font-size: 2.4rem;  
+}
+
+.subtitulo_nota {
+    text-align: center;
+    color: #ffffff;
+    font-size: 2.4rem;  
+}
+
+.subtitulo2 {
+    text-align: center;
+    color: #ffffff;
+    display: flex;
+    justify-content: center; 
+    align-items: center;    
+}
+
+/* Botão customizado */
+.stButton > button {
+    background-color: #161b22;
+    color: #e6edf3;
+    border: 1px solid #30363d;
+    padding: 0.8rem 1.2rem;
+    border-radius: 12px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    width: 100%;
+    margin: 0 auto;
+}
+
+
+/* Hover */
+.stButton > button:hover {
+    background-color: #1f6feb;
+    color: white;
+    border-color: #1f6feb;
+}
+
+.coluna {
+    background-color: #43616d;
+    padding: 20px;
+    border-radius: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
