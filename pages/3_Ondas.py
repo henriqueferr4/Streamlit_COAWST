@@ -27,7 +27,14 @@ def extrair_timestep(nome_arquivo: str) -> int:
         raise ValueError(f"Timestep não encontrado em: {nome_arquivo}")
     return int(match.group(1))
 
-ondas_dir = Path("/home/henrique/Documentos/CIEX/Streamlit_COAWST/plots/Ondas")
+BASE_DIR = Path(__file__).resolve().parents[1]
+
+data = st.session_state.get("data_selecionada")
+
+if data:
+    vento_dir = BASE_DIR / "hist" / data / "Ondas"
+else:
+    vento_dir = BASE_DIR / "plots" / "Ondas"
 
 pngs = sorted(
     ondas_dir.glob("Hs_Direcao_*.png"),
