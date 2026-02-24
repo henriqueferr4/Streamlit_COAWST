@@ -17,10 +17,14 @@ st.markdown("<h1 class='titulo'>Vento - WRF</h1>",
 #Se alguma data foi selecionada em ""
 data = st.session_state.get("data_selecionada")
 
+BASE_DIR = Path(__file__).resolve().parents[1]
+
+data = st.session_state.get("data_selecionada")
+
 if data:
-    vento_dir = Path("hist") / data / "Vento_850hPa"
+    vento_dir = BASE_DIR / "hist" / data / "Vento_850hPa"
 else:
-    vento_dir = Path("/home/henrique/Documentos/CIEX/Streamlit_COAWST/plots/Vento_850hPa")
+    vento_dir = BASE_DIR / "plots" / "Vento_850hPa"
 
 def hora_previsao(p):
     nums = re.findall(r"(\d+)h", p.name)
