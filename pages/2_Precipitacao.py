@@ -14,8 +14,14 @@ load_css("assets/style.css")
 st.markdown("<h1 class='titulo'>Precipitação e Pressão Atmosférica - WRF</h1>",
     unsafe_allow_html=True)
 
+BASE_DIR = Path(__file__).resolve().parents[1]
 
-chuva_dir = Path("/home/henrique/Documentos/CIEX/Streamlit_COAWST/plots/CHUVA")
+data = st.session_state.get("data_selecionada")
+
+if data:
+    vento_dir = BASE_DIR / "hist" / data / "CHUVA"
+else:
+    vento_dir = BASE_DIR / "plots" / "CHUVA"
 
 def hora_previsao(p):
     nums = re.findall(r"(\d+)h", p.name)
