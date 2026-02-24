@@ -14,7 +14,8 @@ load_css("assets/style.css")
 st.markdown("<h1 class='titulo'>Imagens de satélite - GOES - Canal 08</h1>",
     unsafe_allow_html=True)
 
-Goes08_dir = Path("/home/henrique/Documentos/CIEX/Streamlit_COAWST/plots/Goes08")
+BASE_DIR = Path(__file__).resolve().parents[1]
+Goes08_dir = BASE_DIR / "plots" / "Goes08"
 
 def hora_previsao(p):
     nums = re.findall(r"(\d+)h", p.name)
